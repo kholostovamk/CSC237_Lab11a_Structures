@@ -14,7 +14,7 @@ struct MovieData
 //FUNCTION PROTOTYPE
 //void displayMovie(MovieData *ptr);
 void populateMovieDataArray(MovieData *arrayPtr, int array_size);
-//void displayMovieDataArray(MovieData *arrayPtr, int arraySize);
+void displayMovieDataArray(MovieData *arrayPtr, int array_size);
 //MovieData *findLongestMovie(MovieData *arrayPtr, int arraySize);
 
 
@@ -31,8 +31,8 @@ int main() {
 
     //Data from user to the struct
     populateMovieDataArray(arrayPtr, array_size);
-       
-        }
+    displayMovieDataArray(arrayPtr, array_size);
+               }
 
 
 
@@ -51,6 +51,16 @@ int main() {
 
         cout<<"Enter Running time (minutes) "<<i<<" : ";
         cin>>arrayPtr[i].runningTime;
+        }
+    }
+
+    void displayMovieDataArray(MovieData *arrayPtr, int array_size) {
+        for (int i = 0; i < array_size; i++){
+        cout<<&arrayPtr[i]<<": arrayPtr["<<i<<"] = \n";
+        cout<<"\tTitle\t\t:"<<arrayPtr[i].title<<endl;
+        cout<<"\tDirector\t:"<<arrayPtr[i].director<<endl;
+        cout<<"\tReleased\t:"<<arrayPtr[i].yearReleased <<endl;
+        cout<<"\tRunning Time\t:"<<arrayPtr[i].runningTime<<" minutes\n\n";  
         }
     }
 
