@@ -33,6 +33,10 @@ int main() {
     populateMovieDataArray(arrayPtr, array_size);
     displayMovieDataArray(arrayPtr, array_size);
     findLongestMovie(arrayPtr, array_size);
+
+    cout<<"DELETING array at arrayPtr = "<<&arrayPtr<<"\n";
+    delete []arrayPtr;
+    return 0;
 }
 
     void populateMovieDataArray(MovieData *arrayPtr, int array_size){
@@ -73,9 +77,15 @@ int main() {
         }
 
         cout<<"\nLongest Movie in the list:\n";
-        cout<<"\tTitle\t\t:"<<arrayPtr[longest].title<<"\n";
-        cout<<"\tDirector\t:"<<arrayPtr[longest].director<<"\n";
-        cout<<"\tReleased\t:"<<arrayPtr[longest].yearReleased <<"\n";
+        cout<<"\tTitle\t\t:"<<arrayPtr[longest].title<<endl;
+        cout<<"\tDirector\t:"<<arrayPtr[longest].director<<endl;
+        cout<<"\tReleased\t:"<<arrayPtr[longest].yearReleased <<endl;
         cout<<"\tRunning Time\t:"<<arrayPtr[longest].runningTime<<" minutes\n\n";
+
+        cout<<"Longest Movie is : "<<arrayPtr[longest].runningTime<<" minutes long\n";
+
+        
         
     }
+
+   
